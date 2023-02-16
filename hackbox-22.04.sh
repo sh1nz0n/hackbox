@@ -32,6 +32,14 @@ mkdir -p /root/tools/mimikatz \
 
 cd $tmpdir
 
+# install burp suite community edition 2023.1.2
+curl -o burpsuite_community_linux_v2023_1_2.zip https://portswigger-cdn.net/burp/releases/download?product=community&version=2023.1.2&type=Linux \
+  && mkdir -p /opt/burpsuite/ \
+  && cd /opt/burpsuite/ \
+  && unzip ./burpsuite_community_linux_v2023_1_2.zip
+  
+cd $tmpdir
+
 # install winPEAS & linPEAS
 mkdir -p /root/tools \
   && wget https://github.com/carlospolop/PEASS-ng/archive/refs/tags/20230212.tar.gz \
