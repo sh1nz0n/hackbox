@@ -44,6 +44,8 @@ wget https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.
   && cp -a ./PowerUp.ps1 /root/tools/ \
   && cp -a ./PowerUp.ps1 /etc/skel/tools 
 
+# install tailscale
+curl -fsSL https://tailscale.com/install.sh | sh
 
 # create bashrc
 cp /etc/skel/.bashrc /etc/skel/.bashrc.orig
