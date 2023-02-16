@@ -46,7 +46,7 @@ wget https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.
 
 
 # create bashrc
-cat << EOF > /etc/skel/.bashrc
+cat << 'EOF' > /etc/skel/.bashrc
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
