@@ -32,11 +32,11 @@ mkdir -p /root/tools/mimikatz \
 
 cd $tmpdir
 
-# install burp suite community edition 2023.1.2
+# download burp suite community edition 2023.1.2 installer
 curl -o burpsuite_community_linux_v2023_1_2.sh 'https://portswigger-cdn.net/burp/releases/download?product=community&version=2023.1.2&type=Linux' \
   && chmod +x burpsuite_community_linux_v2023_1_2.sh \
   && ln -sf $tmpdir/burpsuite_community_linux_v2023_1_2.sh /etc/skel/tools/ \
-  && ln -sf $tmpdir/burpsuite_community_linux_v2023_1_2.sh /root/tools/ \
+  && ln -sf $tmpdir/burpsuite_community_linux_v2023_1_2.sh /root/tools/
   
 cd $tmpdir
 
