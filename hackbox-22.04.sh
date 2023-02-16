@@ -170,4 +170,5 @@ if ! shopt -oq posix; then
 fi
 EOF
 
+. /etc/skel/.bashrc
 cp -a /etc/skel/.bashrc /root
