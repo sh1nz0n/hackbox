@@ -25,22 +25,15 @@ chmod +x msfupdate.erb
 wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatz_trunk.zip
 mkdir -p /root/tools/mimikatz \
   && cd /root/tools/mimikatz \
-  && unzip $tmpdir/mimikatz_trunk.zip
-
-mkdir -p /etc/skel/tools/mimikatz \
-  && unzip $tmpdir/mimikatz_trunk.zip
+  && unzip $tmpdir/mimikatz_trunk.zip \
+  && cp -a /root/tools/mimikatz /etc/skel
 
 cd $tmpdir
 
 # install winPEAS & linPEAS
-mkdir -p /root/tools/peas \
-  && cd /root/tools/peas/ \
+mkdir -p /root/tools \
   && wget https://github.com/carlospolop/PEASS-ng/archive/refs/tags/20230212.tar.gz \
-  && tar xzvf 20230212.tar.gz
-  
-mkdir -p /etc/skel/tools/peas \
-  && cd /etc/skel/peas/ \
-  && wget https://github.com/carlospolop/PEASS-ng/archive/refs/tags/20230212.tar.gz \
-  && tar xzvf 20230212.tar.gz  
-  
-cd $tmpdir
+  && tar xzvf 20230212.tar.gz \
+  && mv PEASS-ng-20230212 /root/tools/peass \
+  && cp -a /root/tools/peass /etc/skel
+
