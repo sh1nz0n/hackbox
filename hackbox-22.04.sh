@@ -12,9 +12,11 @@ apt -y install nmap sqlmap dnsenum dnsmap dnsrecon ffuf gobuster dirb
 apt -y install john hydra medusa hashcat
 
 # install seclists
-wget https://github.com/danielmiessler/SecLists/archive/refs/tags/2022.4.tar.gz
-tar xzvf ./2022.4.tar.gz
-mv ./SecLists-2022.4 /usr/share/seclists
+wget https://github.com/danielmiessler/SecLists/archive/refs/tags/2022.4.tar.gz \
+ && tar xzvf ./2022.4.tar.gz \
+ && mv ./SecLists-2022.4 /usr/share/seclists \
+ && tar xzvf /usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt.tar.gz \
+ && ln -sf /usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt /usr/share/seclists/rockyou.txt 
 
 # install metasploit
 wget https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb
