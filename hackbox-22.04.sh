@@ -15,7 +15,7 @@ apt -y install john hydra medusa hashcat
 wget https://github.com/danielmiessler/SecLists/archive/refs/tags/2022.4.tar.gz \
  && tar xzvf ./2022.4.tar.gz \
  && mv ./SecLists-2022.4 /usr/share/seclists \
- && tar xzvf /usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt.tar.gz \
+ && tar xzvf /usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt.tar.gz -C /usr/share/seclists/Passwords/Leaked-Databases/ \
  && ln -sf /usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt /usr/share/seclists/rockyou.txt 
 
 # install metasploit
