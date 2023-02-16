@@ -37,3 +37,9 @@ mkdir -p /root/tools \
   && mv PEASS-ng-20230212 /root/tools/peass \
   && cp -a /root/tools/peass /etc/skel/tools
 
+cd $tmpdir
+
+# install powerup
+wget https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1 \
+  && cp -a ./PowerUp.ps1 /root/tools/ \
+  && cp -a ./PowerUp.ps1 /etc/skel/tools 
