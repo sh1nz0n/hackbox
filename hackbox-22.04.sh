@@ -34,13 +34,13 @@ cd $tmpdir
 
 # install winPEAS & linPEAS
 mkdir -p /root/tools/peas \
-  && cd /root/tools/peas/
-  && wget https://github.com/carlospolop/PEASS-ng/archive/refs/tags/20230212.tar.gz
+  && cd /root/tools/peas/ \
+  && wget https://github.com/carlospolop/PEASS-ng/archive/refs/tags/20230212.tar.gz \
   && tar xzvf 20230212.tar.gz
   
 mkdir -p /etc/skel/tools/peas \
-  && cd /etc/skel/peas/
-  && wget https://github.com/carlospolop/PEASS-ng/archive/refs/tags/20230212.tar.gz
+  && cd /etc/skel/peas/ \
+  && wget https://github.com/carlospolop/PEASS-ng/archive/refs/tags/20230212.tar.gz \
   && tar xzvf 20230212.tar.gz  
   
 cd $tmpdir
