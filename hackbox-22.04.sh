@@ -11,7 +11,7 @@ mkdir $tmpdir
 cd $tmpdir
 
 # install deps
-apt -y install unzip
+apt -y install unzip python3-pip
 
 # install basic enumeration tools
 apt -y install nmap sqlmap dnsenum dnsmap dnsrecon ffuf gobuster dirb
@@ -37,6 +37,14 @@ mkdir -p /root/tools/mimikatz \
   && cd /root/tools/mimikatz \
   && unzip $tmpdir/mimikatz_trunk.zip \
   && cp -a /root/tools/mimikatz /etc/skel/tools
+
+cd $tmpdir
+
+# install Villain backdoor framework
+git clone https://github.com/t3l3machus/Villain.git
+pip3 install -r $tmpdir/Villain/requirements.txt
+cp -a $tmpdir/Villain /etc/skel/tools
+cp -a $tmpdir/Villain /root/tools
 
 cd $tmpdir
 
