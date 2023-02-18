@@ -10,6 +10,9 @@ tmpdir=/var/tmp/hackbox
 mkdir $tmpdir
 cd $tmpdir
 
+# install deps
+apt -y install unzip
+
 # install basic enumeration tools
 apt -y install nmap sqlmap dnsenum dnsmap dnsrecon ffuf gobuster dirb
 
