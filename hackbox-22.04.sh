@@ -27,9 +27,9 @@ wget https://github.com/danielmiessler/SecLists/archive/refs/tags/2022.4.tar.gz 
  && ln -sf /usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt /usr/share/seclists/rockyou.txt 
 
 # install metasploit
-wget https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb
-chmod +x msfupdate.erb
-./msfupdate.erb
+wget https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb \
+  && chmod +x msfupdate.erb \
+  && ./msfupdate.erb
 
 # install mimikatz 2.2.0-20220919
 wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatz_trunk.zip
@@ -41,10 +41,10 @@ mkdir -p /root/tools/mimikatz \
 cd $tmpdir
 
 # install Villain backdoor framework
-git clone https://github.com/t3l3machus/Villain.git
-pip3 install -r $tmpdir/Villain/requirements.txt
-cp -a $tmpdir/Villain /etc/skel/tools
-cp -a $tmpdir/Villain /root/tools
+git clone https://github.com/t3l3machus/Villain.git \
+  && pip3 install -r $tmpdir/Villain/requirements.txt \
+  && cp -a $tmpdir/Villain /etc/skel/tools \
+  && cp -a $tmpdir/Villain /root/tools
 
 cd $tmpdir
 
