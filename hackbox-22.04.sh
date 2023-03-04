@@ -31,12 +31,14 @@ wget https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/t
   && chmod +x msfupdate.erb \
   && ./msfupdate.erb
 
+cd $tmpdir
+
 # install mimikatz 2.2.0-20220919
 wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatz_trunk.zip
-mkdir -p /root/tools/mimikatz \
-  && cd /root/tools/mimikatz \
+mkdir -p /etc/skel/tools/mimikatz \
+  && cd /etc/skel/tools/mimikatz \
   && unzip $tmpdir/mimikatz_trunk.zip \
-  && cp -a /root/tools/mimikatz /etc/skel/tools
+  && cp -a /etc/skel/tools /root/tools
 
 cd $tmpdir
 
@@ -66,7 +68,7 @@ mkdir -p /root/tools \
 cd $tmpdir
 
 # install powerup
-wget https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1 \
+wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1 \
   && cp -a ./PowerUp.ps1 /root/tools/ \
   && cp -a ./PowerUp.ps1 /etc/skel/tools 
 
@@ -202,3 +204,5 @@ EOF
 
 . /etc/skel/.bashrc
 cp -a /etc/skel/.bashrc /root
+
+echo "All done. Happy Hacking!"
