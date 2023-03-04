@@ -14,7 +14,7 @@ cd $tmpdir
 apt -y install unzip python3-pip
 
 # install basic enumeration tools
-apt -y install nmap sqlmap dnsenum dnsmap dnsrecon ffuf gobuster dirb
+apt -y install nmap sqlmap dnsenum dnsmap dnsrecon ffuf gobuster dirb nikto
 
 # install basic password cracking & brute forcing tools
 apt -y install john hydra medusa hashcat
