@@ -205,4 +205,5 @@ EOF
 . /etc/skel/.bashrc
 cp -a /etc/skel/.bashrc /root
 
+rm -rf $tmpdir
 echo "All done. Happy Hacking!"
